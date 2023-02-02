@@ -1,0 +1,137 @@
+C51 COMPILER V9.54   MAIN                                                                  04/03/2019 18:23:17 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include<AT89C51XD2.h> //uses the functions for the AT89C51XD2
+   2          
+   3          #include<stdio.h>  // prototype declarations for I/O functions
+   4          
+   5          sbit buzz = P2;  //sets buzzer as pin P2.0 on the chip
+   6          
+   7          sbit b = P0^7;  //button b is P0.7
+   8          sbit As = P0^6; //button A sharp is P0.6
+   9          sbit A = P0^5;  //button A is P0.5
+  10          sbit Gs = P0^4; //button G sharp is P0.4
+  11          sbit G = P0^3;  //button G is P0.3
+  12          sbit Fs = P0^2; //button F sharp is P0.2
+  13          sbit F = P0^1;  //button F is P0.1
+  14          sbit E = P0^0;  //button E is P0.0
+  15          sbit Ds = P1^0; //button D sharp is P1.0
+  16          sbit D = P1^1;  //button D is P1.1
+  17          sbit Cs = P1^2; //button C sharp is P1.2
+  18          sbit C = P1^3;  //button A is P1.3
+  19          
+  20          int sPer = 0; //sPer is selected peroid and stores the amount of No operations are called
+  21          
+  22          void sinePrint(int sPer) ;  //sinePrint function prototype declaration
+  23          
+  24          unsigned WAVEVALUE[16] = {128, 192, 224, 240, 255, 240, 224, 192, 128, 64, 32, 16, 0, 16, 32, 64}; //array
+             - that stores the 16 values for the sinewave
+  25          
+  26          int loop = 1; //makes loop equal 1 this will never change so the program always runs
+  27          
+  28          
+  29          void main(void){ //the main function that the code runs through
+  30   1        
+  31   1        //This is where the input code goes for each pin
+  32   1      
+  33   1        while(loop == 1){ //while loop equals one run this loop. This means the loop always runs until turned off
+  34   2        
+  35   2        while (b == 0){ //while button that represents b is pressed run loop
+  36   3           sPer = 12;   //selected peroid is set to 13 when b is pressed
+  37   3          sinePrint(sPer); //call and run function sinePrint with the sPer value from the current loop
+  38   3        }
+  39   2           
+  40   2        while (As == 0){
+  41   3          sPer = 13;
+  42   3          sinePrint(sPer);
+  43   3        }
+  44   2        
+  45   2        while (A == 0){ 
+  46   3          sPer = 14;    
+  47   3          sinePrint(sPer); 
+  48   3        }
+  49   2        
+  50   2        while (Gs == 0){ 
+  51   3          sPer = 15;
+  52   3          sinePrint(sPer); 
+  53   3        }
+C51 COMPILER V9.54   MAIN                                                                  04/03/2019 18:23:17 PAGE 2   
+
+  54   2        
+  55   2        while (G == 0){ 
+  56   3          sPer = 16;
+  57   3          sinePrint(sPer); 
+  58   3        }
+  59   2        
+  60   2        while (Fs == 0){ 
+  61   3          sPer = 18;
+  62   3          sinePrint(sPer); 
+  63   3        }
+  64   2        
+  65   2        while (F == 0){ 
+  66   3          sPer = 19; 
+  67   3          sinePrint(sPer);
+  68   3        }
+  69   2        
+  70   2        while (E == 0){ 
+  71   3          sPer = 20;
+  72   3          sinePrint(sPer); 
+  73   3        }
+  74   2        
+  75   2        while (Ds == 0){
+  76   3          sPer = 21;
+  77   3          sinePrint(sPer); 
+  78   3        }
+  79   2        
+  80   2        while (D == 0){ 
+  81   3          sPer = 22;
+  82   3          sinePrint(sPer);
+  83   3        }
+  84   2        
+  85   2        while (Cs == 0){ 
+  86   3          sPer = 24; 
+  87   3          sinePrint(sPer); 
+  88   3        }
+  89   2        
+  90   2        while (C == 0){ 
+  91   3          sPer = 26;    
+  92   3          sinePrint(sPer); 
+  93   3        }
+  94   2       }
+  95   1      }
+  96          
+  97          void sinePrint(int sPer){ 
+  98   1        int i; //value in for loop for the array
+  99   1        int s; //value for the for loop for No operations
+ 100   1          
+ 101   1        for(i = 0; i < 16; i++){ //i starts at 0 and adds one until the last array value is reached
+ 102   2            P2 = WAVEVALUE[i];   //takes current value out of array and prints
+ 103   2            
+ 104   2          for(s = 0; s < sPer; s++){ //for loop to start at 0 and stop at the selected value chosen by user. The v
+             -alue is added by one each time
+ 105   3          }
+ 106   2        }
+ 107   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    235    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.54   MAIN                                                                  04/03/2019 18:23:17 PAGE 3   
+
+   DATA SIZE        =     36    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

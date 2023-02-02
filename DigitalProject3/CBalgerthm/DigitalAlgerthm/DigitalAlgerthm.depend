@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1551448848 source:e:\y1portelectroniceng\principles of digital systems (eng431)\digitalproject3\cbalgerthm\digitalalgerthm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+

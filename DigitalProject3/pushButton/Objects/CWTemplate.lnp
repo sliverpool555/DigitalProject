@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\CWTemplate" 
+PRINT(".\Listings\CWTemplate.m51") RAMSIZE(256) 
